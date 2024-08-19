@@ -1,7 +1,7 @@
-import "./App.scss";
+import { Heading } from "./components/atoms/heading";
 
 function App() {
-  return <p>Hola</p>;
+  return <Heading level="h1">Hello world!</Heading>;
 }
 
 export default App;
