@@ -1,0 +1,75 @@
+.default {
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    opacity: 0.8;
+    transform: scale(1.025);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.submit {
+  background-color: blue;
+  color: white;
+}
+
+.reset {
+  background-color: gray;
+  color: white;
+}
+
+.button {
+  background-color: white;
+  color: black;
+}
+
+.primary {
+  background-color: blue;
+  color: white;
+}
+
+.secondary {
+  background-color: gray;
+  color: white;
+}
+
+.tertiary {
+  background-color: white;
+  color: black;
+}
+
+.danger {
+  background-color: red;
+  color: white;
+}
+
+.warning {
+  background-color: yellow;
+  color: black;
+}
+
+.success {
+  background-color: green;
+  color: white;
+}
+
+.solid {
+  border: none;
+}
+
+.outline {
+  border: 1px solid black;
+}
+
+.text {
+  background-color: white;
+  color: black;
+}
