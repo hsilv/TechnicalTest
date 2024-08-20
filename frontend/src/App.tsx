@@ -1,5 +1,6 @@
 import { Heading } from "./components/atoms/heading";
 import { Button } from "./components/atoms/button";
+import { Input } from "./components/atoms/input";
 
 function App() {
   const handleClick = () => {
@@ -11,12 +12,18 @@ function App() {
       <Heading level="h1">Hello world!</Heading>
       <Button
         styleType="solid"
-        variant="warning"
+        variant="primary"
         type="submit"
         onClick={handleClick}
       >
         Puede ser más tarde
       </Button>
+      <Input
+        styleType="outlined"
+        variant="primary"
+        type="text"
+        placeholder="Enter text"
+      />
     </>
   );
 }

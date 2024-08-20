@@ -1,0 +1,39 @@
+.default {
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+  &:focus {
+    border-color: inherit;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+}
+
+.filled {
+  background-color: white;
+}
+
+.outlined {
+  background-color: transparent;
+  border-width: 2px;
+  border-style: solid;
+  border-color: inherit;
+}
+
+.primary {
+  border-color: blue;
+}
+
+.secondary {
+  border-color: gray;
+}
+
+.danger {
+  border-color: red;
+}
+
+.success {
+  border-color: green;
+}
