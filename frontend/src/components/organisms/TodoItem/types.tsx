@@ -3,4 +3,5 @@ export interface TodoItemProps {
   completed: boolean;
   onComplete: () => void;
   onDelete: () => void;
+  className?: string;
 }

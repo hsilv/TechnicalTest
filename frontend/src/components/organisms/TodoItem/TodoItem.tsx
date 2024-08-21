@@ -9,11 +9,12 @@ import styles from "./TodoItem.module.scss";
 const TodoItem: React.FC<TodoItemProps> = ({
   text,
   completed,
+  className = "",
   onComplete,
   onDelete,
 }) => {
   return (
-    <div className={styles.todoItem}>
+    <div className={classNames(styles.todoItem, className)}>
       <span
         className={classNames(styles.text, { [styles.completed]: completed })}
       >
