@@ -5,4 +5,5 @@ export interface TodoListProps {
   onCompleteTodo: (id: number) => void;
   onDeleteTodo: (id: number) => void;
   onEditTodo: (id: number, newText: string) => void;
+  className?: string;
 }

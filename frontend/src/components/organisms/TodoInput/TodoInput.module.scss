@@ -1,4 +1,4 @@
-$todoInputBreakpoint: 314px;
+$todoInputBreakpoint: 250px;
 $todoInputBackgroundColor: rgb(223, 223, 223);
 $todoInputPlaceholderColor: gray;
 
@@ -11,7 +11,7 @@ $todoInputPlaceholderColor: gray;
   flex-wrap: wrap;
 
   @media screen and (max-width: $todoInputBreakpoint) {
-    flex-direction: column;
+    flex-direction: column !important;
   }
 }
 
@@ -20,7 +20,7 @@ $todoInputPlaceholderColor: gray;
   background-color: $todoInputBackgroundColor;
   border: none;
   transition: 0.3s ease transform;
-
+  width: 100%;
   &::placeholder {
     color: $todoInputPlaceholderColor;
   }
@@ -35,6 +35,11 @@ $todoInputPlaceholderColor: gray;
 .addButton {
   background-color: rgb(53, 214, 53);
   color: white;
+
+  svg {
+    min-width: 16px;
+    min-height: 16px;
+  }
 
   @media screen and (max-width: $todoInputBreakpoint) {
     flex: 1;

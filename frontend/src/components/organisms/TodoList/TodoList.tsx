@@ -1,4 +1,5 @@
 import React from "react";
+import classNames from "classnames";
 import { TodoItem } from "@organisms/TodoItem";
 import styles from "./TodoList.module.scss";
 import { TodoListProps } from "./types";
@@ -8,9 +9,10 @@ const TodoList: React.FC<TodoListProps> = ({
   onCompleteTodo,
   onDeleteTodo,
   onEditTodo,
+  className = "",
 }) => {
   return (
-    <div className={styles.todoListContainer}>
+    <div className={classNames(styles.todoListContainer, className)}>
       <div className={styles.todoItems}>
         {todos.map((todo) => (
           <TodoItem

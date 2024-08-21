@@ -10,13 +10,16 @@ const TodoTemplate: React.FC = () => {
 
   return (
     <div className={styles.todoTemplateContainer}>
-      <Heading level="h1">Todo List</Heading>
-      <TodoInput onAddTodo={addTodo} />
+      <Heading level="h1" className={styles.todoHeading}>
+        Todo List
+      </Heading>
+      <TodoInput onAddTodo={addTodo} className={styles.todoInput} />
       <TodoList
         todos={todos}
         onCompleteTodo={completeTodo}
         onDeleteTodo={deleteTodo}
         onEditTodo={editTodo}
+        className={styles.todoList}
       />
     </div>
   );
