@@ -35,7 +35,7 @@ const TodoItem: React.FC<TodoItemProps> = ({
             completed ? styles.completedButton : styles.completeButton
           )}
         >
-          {completed ? "Completed" : "Complete"}
+          {completed ? "Completado" : "Completar"}
         </IconizedButton>
         <IconizedButton
           icon={TrashIcon}
@@ -45,7 +45,7 @@ const TodoItem: React.FC<TodoItemProps> = ({
           onClick={onDelete}
           className={classNames(styles.actionButton, styles.deleteButton)}
         >
-          Delete
+          Eliminar
         </IconizedButton>
         <IconizedButton
           icon={EditIcon}
@@ -55,7 +55,7 @@ const TodoItem: React.FC<TodoItemProps> = ({
           onClick={onEdit}
           className={classNames(styles.actionButton, styles.editButton)}
         >
-          Edit
+          Editar
         </IconizedButton>
       </div>
     </div>

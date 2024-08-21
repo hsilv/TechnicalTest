@@ -12,7 +12,7 @@ const TodoTemplate: React.FC<TodoTemplateProps> = ({ onEditTodo }) => {
   return (
     <div className={styles.todoTemplateContainer}>
       <Heading level="h1" className={styles.todoHeading}>
-        Todo List
+        ToDo List
       </Heading>
       <TodoInput onSubmit={addTodo} className={styles.todoInput} />
       <TodoList

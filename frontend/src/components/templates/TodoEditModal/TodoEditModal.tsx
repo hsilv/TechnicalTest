@@ -58,7 +58,7 @@ const TodoEditModal: React.FC<TodoEditModalProps> = ({
           />
           <div className={styles.actions}>
             <Button styleType="solid" variant="danger" onClick={handleClose}>
-              Cancel
+              Cancelar
             </Button>
           </div>
         </div>

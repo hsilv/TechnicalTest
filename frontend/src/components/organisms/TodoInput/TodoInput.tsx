@@ -36,7 +36,7 @@ const TodoInput: React.FC<TodoInputProps> = ({
         type="text"
         value={text}
         onChange={(e) => setText(e.target.value)}
-        placeholder="Add a new todo"
+        placeholder="Agrega un nuevo ToDo"
         className={styles.input}
       />
       <IconizedButton
@@ -50,7 +50,7 @@ const TodoInput: React.FC<TodoInputProps> = ({
           type === "add" ? styles.addButton : styles.editButton
         )}
       >
-        {type === "add" ? "Add" : "Edit"}
+        {type === "add" ? "Agregar" : "Editar"}
       </IconizedButton>
     </div>
   );
