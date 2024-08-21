@@ -1,11 +1,14 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { TodoTemplate } from "@templates/TodoTemplate";
 import { TodoEditModal } from "@templates/TodoEditModal";
-import { useToDo } from "@hooks/toDo/useToDo";
+import { RootState } from "@store/index";
+import { editTodo } from "@store/slices/todosSlice";
 import { Todo } from "@context/todo/types";
 
 const TodoPage: React.FC = () => {
-  const { todos, editTodo } = useToDo();
+  const todos = useSelector((state: RootState) => state.todos.todos);
+  const dispatch = useDispatch();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentTodo, setCurrentTodo] = useState<Todo | null>(null);
 
@@ -21,7 +24,12 @@ const TodoPage: React.FC = () => {
 
   const handleSave = (newText: string) => {
     if (currentTodo) {
-      editTodo(currentTodo.id, newText);
+      dispatch(
+        editTodo({
+          id: currentTodo.id,
+          newTodo: { text: newText },
+        })
+      );
     }
     closeModal();
   };

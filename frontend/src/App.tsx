@@ -1,12 +1,13 @@
-import { TodoProvider } from "@context/todo";
 import { TodoPage } from "@pages/TodoPage";
+import { Provider } from "react-redux";
+import { store } from "@store/index";
 
 function App() {
   return (
     <>
-      <TodoProvider>
+      <Provider store={store}>
         <TodoPage />
-      </TodoProvider>
+      </Provider>
     </>
   );
 }
