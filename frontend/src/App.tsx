@@ -26,7 +26,7 @@ function App() {
         type="text"
         placeholder="Enter text"
       />
-      <IconizedButton icon={PlusIcon}>Hola</IconizedButton>
+      <IconizedButton icon={PlusIcon}></IconizedButton>
     </>
   );
 }

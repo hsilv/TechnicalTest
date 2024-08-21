@@ -1,8 +1,19 @@
 .iconizedButton {
   display: flex;
   align-items: center;
+  flex-direction: row;
+
+  &.right {
+    flex-direction: row-reverse;
+  }
 }
 
 .icon {
-  margin-right: 8px;
+  &.left {
+    margin-right: 8px;
+  }
+
+  &.right {
+    margin-left: 8px;
+  }
 }

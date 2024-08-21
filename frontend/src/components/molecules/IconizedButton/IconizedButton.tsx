@@ -13,13 +13,21 @@ const IconizedButton: React.FC<IconizedButtonProps> = ({
   children,
   className,
   iconProps,
+  alignIcon = "left",
   ...props
 }) => {
+  const hasChildren = React.Children.count(children) > 0;
+
   return (
     <Button
       variant="icon"
       styleType="icon"
-      className={classNames(styles.iconizedButton, className)}
+      className={classNames(
+        styles.iconizedButton,
+        className,
+        { [styles.right]: hasChildren && alignIcon === "right" },
+        { [styles.left]: hasChildren && alignIcon === "left" }
+      )}
       {...props}
     >
       <Icon
@@ -27,7 +35,12 @@ const IconizedButton: React.FC<IconizedButtonProps> = ({
         size={iconSize}
         color={iconColor}
         stroke={iconStroke}
-        className={styles.icon}
+        className={classNames(
+          styles.icon,
+          { [styles.right]: hasChildren && alignIcon === "right" },
+          { [styles.left]: hasChildren && alignIcon === "left" },
+          iconProps?.className
+        )}
         {...iconProps}
       />
       {children}
