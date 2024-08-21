@@ -1,11 +1,9 @@
-import { Heading } from "@atoms/heading";
-import { TodoInput } from "@organisms/TodoInput";
+import TodoTemplate from "@templates/TodoTemplate/TodoTemplate";
 
 function App() {
   return (
     <>
-      <Heading level="h1">Todo List</Heading>
-      <TodoInput onAddTodo={() => {}} />
+      <TodoTemplate />
     </>
   );
 }

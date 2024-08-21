@@ -3,6 +3,7 @@ import classNames from "classnames";
 import { IconizedButton } from "@molecules/IconizedButton";
 import { ReactComponent as CheckIcon } from "@assets/check.svg";
 import { ReactComponent as TrashIcon } from "@assets/trash.svg";
+import { ReactComponent as EditIcon } from "@assets/edit.svg";
 import { TodoItemProps } from "./types";
 import styles from "./TodoItem.module.scss";
 
@@ -12,6 +13,7 @@ const TodoItem: React.FC<TodoItemProps> = ({
   className = "",
   onComplete,
   onDelete,
+  onEdit,
 }) => {
   return (
     <div className={classNames(styles.todoItem, className)}>
@@ -44,6 +46,16 @@ const TodoItem: React.FC<TodoItemProps> = ({
           className={classNames(styles.actionButton, styles.deleteButton)}
         >
           Delete
+        </IconizedButton>
+        <IconizedButton
+          icon={EditIcon}
+          alignIcon="left"
+          iconSize={16}
+          iconColor="#666666"
+          onClick={onEdit}
+          className={classNames(styles.actionButton, styles.editButton)}
+        >
+          Edit
         </IconizedButton>
       </div>
     </div>

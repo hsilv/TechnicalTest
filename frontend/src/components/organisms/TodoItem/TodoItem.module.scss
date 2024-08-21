@@ -1,10 +1,11 @@
 $minBreakpoint: 500px;
+$showOnlyIconsBreakpoint: 425px;
 
 .todoItem {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px;
+  padding-block: 8px;
   border-bottom: 1px solid #ccc;
   flex-wrap: wrap;
 
@@ -51,6 +52,16 @@ $minBreakpoint: 500px;
     align-items: center;
     justify-content: center;
   }
+
+  @media (max-width: $showOnlyIconsBreakpoint) {
+    font-size: 0;
+    svg {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      min-width: 16px;
+      min-height: 16px;
+    }
+  }
 }
 
 .deleteButton {
@@ -66,4 +77,9 @@ $minBreakpoint: 500px;
 .completedButton {
   background-color: #ccc;
   color: gray;
+}
+
+.editButton {
+  background-color: rgb(206, 206, 206);
+  color: #666666;
 }
