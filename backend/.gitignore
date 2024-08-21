@@ -1,0 +1,54 @@
+# Symfony
+/var/
+/vendor/
+/public/bundles/
+/.env
+.env.local
+.env.*.local
+.env.php
+.env.local.php
+.env.*.local.php
+
+# Logs
+/log/
+/*.log
+
+# Cache
+/cache/
+/*.cache
+
+# Composer
+/composer.phar
+
+# Node
+/node_modules/
+/npm-debug.log*
+/yarn-error.log*
+/pnpm-debug.log*
+
+# IDEs and editors
+/.idea/
+/.vscode/
+/*.swp
+*~
+
+# Miscellaneous
+/.DS_Store
+Thumbs.db
+
+# Symfony Flex
+###> symfony/flex ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/vendor/
+###< symfony/flex ###
+###> symfony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+/var/
+/vendor/
+###< symfony/framework-bundle ###
