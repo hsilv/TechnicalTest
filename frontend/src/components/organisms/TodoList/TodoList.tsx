@@ -21,12 +21,7 @@ const TodoList: React.FC<TodoListProps> = ({
             completed={todo.completed}
             onComplete={() => onCompleteTodo(todo.id)}
             onDelete={() => onDeleteTodo(todo.id)}
-            onEdit={() => {
-              const newText = prompt("Edit todo", todo.text);
-              if (newText) {
-                onEditTodo(todo.id, newText);
-              }
-            }}
+            onEdit={() => onEditTodo(todo)}
           />
         ))}
       </div>

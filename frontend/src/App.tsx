@@ -1,11 +1,11 @@
 import { TodoProvider } from "@context/todo";
-import { TodoTemplate } from "@templates/TodoTemplate";
+import { TodoPage } from "@pages/TodoPage";
 
 function App() {
   return (
     <>
       <TodoProvider>
-        <TodoTemplate />
+        <TodoPage />
       </TodoProvider>
     </>
   );

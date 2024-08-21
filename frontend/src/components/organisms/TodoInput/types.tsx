@@ -1,4 +1,8 @@
+export type InputTypes = "add" | "edit";
+
 export interface TodoInputProps {
-  onAddTodo: (text: string) => void;
+  onSubmit: (text: string) => void;
   className?: string;
+  type?: InputTypes;
+  defaultValue?: string;
 }

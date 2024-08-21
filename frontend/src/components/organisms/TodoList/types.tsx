@@ -4,6 +4,6 @@ export interface TodoListProps {
   todos: Todo[];
   onCompleteTodo: (id: number) => void;
   onDeleteTodo: (id: number) => void;
-  onEditTodo: (id: number, newText: string) => void;
+  onEditTodo: (todo: Todo) => void;
   className?: string;
 }

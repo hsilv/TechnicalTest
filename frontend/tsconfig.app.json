@@ -26,7 +26,7 @@
       "@molecules/*": ["src/components/molecules/*"],
       "@organisms/*": ["src/components/organisms/*"],
       "@templates/*": ["src/components/templates/*"],
-      "@pages/*": ["src/components/*"],
+      "@pages/*": ["src/components/pages/*"],
       "@assets/*": ["src/assets/*"],
       "@context/*": ["src/logic/context/*"],
       "@hooks/*": ["src/logic/hooks/*"],
