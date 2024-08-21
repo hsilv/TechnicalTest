@@ -1,14 +1,7 @@
-// frontend/src/logic/context/TodoContext.tsx
-import React, { createContext, useState, ReactNode } from "react";
+import React, { createContext, ReactNode } from "react";
 import { Todo } from "./types";
-
-interface TodoContextProps {
-  todos: Todo[];
-  addTodo: (text: string) => void;
-  completeTodo: (id: number) => void;
-  deleteTodo: (id: number) => void;
-  editTodo: (id: number, newText: string) => void;
-}
+import { useLocalStorage } from "@hooks/localStorage";
+import { TodoContextProps } from "./types";
 
 export const TodoContext = createContext<TodoContextProps | undefined>(
   undefined
@@ -17,7 +10,7 @@ export const TodoContext = createContext<TodoContextProps | undefined>(
 export const TodoProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [todos, setTodos] = useState<Todo[]>([]);
+  const [todos, setTodos] = useLocalStorage<Todo[]>("todos", []);
 
   const addTodo = (text: string) => {
     const newTodo: Todo = {

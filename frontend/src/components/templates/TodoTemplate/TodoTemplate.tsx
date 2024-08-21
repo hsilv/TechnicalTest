@@ -3,7 +3,7 @@ import { Heading } from "@atoms/heading";
 import { TodoInput } from "@organisms/TodoInput";
 import { TodoList } from "@organisms/TodoList";
 import styles from "./TodoTemplate.module.scss";
-import { useToDo } from "@hooks/todo/useToDo";
+import { useToDo } from "@hooks/toDo/useToDo";
 
 const TodoTemplate: React.FC = () => {
   const { todos, addTodo, completeTodo, deleteTodo, editTodo } = useToDo();
