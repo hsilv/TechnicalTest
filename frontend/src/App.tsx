@@ -1,8 +1,6 @@
-import { Heading } from "./components/atoms/heading";
-import { Button } from "./components/atoms/button";
-import { Input } from "./components/atoms/input";
-import { ReactComponent as SampleIcon } from "./assets/vite.svg";
-import { Icon } from "./components/atoms/icon";
+import { Heading } from "@atoms/heading";
+import { Button } from "@atoms/button";
+import { Input } from "@atoms/input";
 
 function App() {
   const handleClick = () => {
@@ -26,7 +24,6 @@ function App() {
         type="text"
         placeholder="Enter text"
       />
-      <Icon svg={SampleIcon} size={36} color="red" />
     </>
   );
 }

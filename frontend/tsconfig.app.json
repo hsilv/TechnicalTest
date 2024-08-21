@@ -18,7 +18,21 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    "baseUrl": "./",
+    "paths": {
+      "@atoms/*": ["src/components/atoms/*"],
+      "@molecules/*": ["src/components/molecules/*"],
+      "@organisms/*": ["src/components/organisms/*"],
+      "@templates/*": ["src/components/templates/*"],
+      "@pages/*": ["src/components/*"],
+      "@assets/*": ["src/assets/*"],
+      "@context/*": ["src/logic/context/*"],
+      "@hooks/*": ["src/logic/hooks/*"],
+      "@utils/*": ["src/logic/utils/*"],
+      "@store/*": ["src/logic/store/*"]
+    }
   },
   "include": ["src", "custom.d.ts"]
 }
