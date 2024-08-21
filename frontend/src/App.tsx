@@ -1,6 +1,8 @@
 import { Heading } from "@atoms/heading";
 import { Button } from "@atoms/button";
 import { Input } from "@atoms/input";
+import { IconizedButton } from "@molecules/IconizedButton";
+import { ReactComponent as PlusIcon } from "@assets/plus.svg";
 
 function App() {
   const handleClick = () => {
@@ -24,6 +26,7 @@ function App() {
         type="text"
         placeholder="Enter text"
       />
+      <IconizedButton icon={PlusIcon}>Hola</IconizedButton>
     </>
   );
 }

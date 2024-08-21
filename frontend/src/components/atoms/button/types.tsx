@@ -6,9 +6,10 @@ export type ButtonVariant =
   | "tertiary"
   | "danger"
   | "warning"
-  | "success";
+  | "success"
+  | "icon";
 
-export type ButtonStyle = "solid" | "outline" | "text";
+export type ButtonStyle = "solid" | "outline" | "text" | "icon";
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
