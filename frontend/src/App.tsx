@@ -1,32 +1,41 @@
+import { useState } from "react";
 import { Heading } from "@atoms/heading";
-import { Button } from "@atoms/button";
-import { Input } from "@atoms/input";
-import { IconizedButton } from "@molecules/IconizedButton";
-import { ReactComponent as PlusIcon } from "@assets/plus.svg";
+import TodoItem from "@organisms/TodoItem/TodoItem";
 
 function App() {
-  const handleClick = () => {
-    console.log("Hello world!");
+  const [todos, setTodos] = useState([
+    {
+      text: "Aprende React porque está bueno aprender pana, la verdad es que  me ha servido un montón puede ser y es que",
+      completed: false,
+    },
+    { text: "Build a Todo App", completed: false },
+  ]);
+
+  const handleComplete = (index: number) => {
+    const newTodos = [...todos];
+    newTodos[index].completed = !newTodos[index].completed;
+    setTodos(newTodos);
+  };
+
+  const handleDelete = (index: number) => {
+    const newTodos = todos.filter((_, i) => i !== index);
+    setTodos(newTodos);
   };
 
   return (
     <>
-      <Heading level="h1">Hello world!</Heading>
-      <Button
-        styleType="solid"
-        variant="primary"
-        type="submit"
-        onClick={handleClick}
-      >
-        Puede ser más tarde
-      </Button>
-      <Input
-        styleType="outlined"
-        variant="primary"
-        type="text"
-        placeholder="Enter text"
-      />
-      <IconizedButton icon={PlusIcon}></IconizedButton>
+      <Heading level="h1">Todo List</Heading>
+      <div>
+        {todos.map((todo, index) => (
+          <TodoItem
+            key={index}
+            text={todo.text}
+            completed={todo.completed}
+            onComplete={() => handleComplete(index)}
+            onDelete={() => handleDelete(index)}
+          />
+        ))}
+      </div>
     </>
   );
 }
