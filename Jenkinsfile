@@ -2,9 +2,12 @@ pipeline {
     agent any
 
     stages {
-        stage('Clonar el repositorio') {
+        stage('Checkout') {
             steps {
-                git 'https://github.com/hsilv/TechnicalTest.git'
+                checkout([$class: 'GitSCM',
+                    branches: [[name: '*/main']],
+                    userRemoteConfigs: [[url: 'https://github.com/hsilv/TechnicalTest.git']]
+                ])
             }
         }
 
