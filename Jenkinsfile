@@ -1,13 +1,14 @@
 pipeline {
-    agent {
-        docker {
-            image 'jenkins/jenkins:lts'
-            args '-v /var/run/docker.sock:/var/run/docker.sock'
-        }
-    }
+    agent any
 
     stages {
         stage('Checkout') {
+            agent {
+                docker {
+                    image 'php:7.4-cli'
+                    args '-v /var/run/docker.sock:/var/run/docker.sock'
+                }
+            }
             steps {
                 checkout([$class: 'GitSCM',
                     branches: [[name: '*/main']],
@@ -17,6 +18,11 @@ pipeline {
         }
 
         stage('Instalar dependencias Frontend') {
+            agent {
+                docker {
+                    image 'node:18'
+                }
+            }
             steps {
                 dir('frontend') {
                     sh 'pnpm install'
@@ -25,6 +31,11 @@ pipeline {
         }
 
         stage('Preparar entorno Backend') {
+            agent {
+                docker {
+                    image 'php:7.4-cli'
+                }
+            }
             steps {
                 dir('backend') {
                     sh '''
@@ -45,6 +56,11 @@ pipeline {
         }
 
         stage('Instalar dependencias Backend') {
+            agent {
+                docker {
+                    image 'php:7.4-cli'
+                }
+            }
             steps {
                 dir('backend') {
                     sh 'composer install'
@@ -53,6 +69,11 @@ pipeline {
         }
 
         stage('Ejecutar pruebas Frontend') {
+            agent {
+                docker {
+                    image 'node:18'
+                }
+            }
             steps {
                 dir('frontend') {
                     sh 'pnpm test'
@@ -61,6 +82,11 @@ pipeline {
         }
 
         stage('Ejecutar pruebas Backend') {
+            agent {
+                docker {
+                    image 'php:7.4-cli'
+                }
+            }
             steps {
                 dir('backend') {
                     sh 'vendor/bin/phpunit'
