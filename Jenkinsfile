@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clonar el repositorio') {
             steps {
-                git 'https://github.com/hsilv/TechnicalTest.git'
+                checkout scm
             }
         }
 
