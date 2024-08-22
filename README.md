@@ -22,6 +22,7 @@ Una vez el contenedor se esté ejecutando. Si se desea ver la página web fronte
 [http://localhost:5173](http://localhost:5173)
 
 La página se ve de esta forma:
+![](https://github.com/hsilv/TechnicalTest/blob/main/images/frontend-preview.png)
 
 ## Testeo de Frontend
 Para testear el frontend tienen que estar instaladas las librerías en la carpeta `frontend`, eso se hace con:
@@ -38,6 +39,7 @@ pnpm test
 ```
 Los test se ven de esta forma:
 
+![](https://github.com/hsilv/TechnicalTest/blob/main/images/frontend-tests.png)
 ## Acceso a Backend
 Como primer punto, debe colocarse un `.env` en la raíz de backend, aquí la plantilla:
 ```
@@ -89,6 +91,7 @@ Para facilitar el acceso y la interacción con los endpoints servidos por el bac
 
 El Swagger UI se ve de esta forma, cabe destacar que el botón *Authorize* es para que se coloque el token dado por el login:
 
+![](https://github.com/hsilv/TechnicalTest/blob/main/images/backend-preview.png)
 
 ## Testeo de Backend
 Para esto es necesario utilizar el contenedor, como antes:
@@ -101,6 +104,7 @@ Luego en la misma carpeta hacer el testing con:
 ```
 Debería verse de esta forma:
 
+![](https://github.com/hsilv/TechnicalTest/blob/main/images/backend-tests.png)
 
 ## Instrucciones de uso de Jenkins
 Para acceder al Jenkins y poder ejecutar el pipeline servido en este proyecto por medio de la dirección:
@@ -132,6 +136,19 @@ Esto da la contraseña inicial, la cual debe pegarse para iniciar Jenkins, luego
 
 El pipeline corrido se ve de esta forma:
 * Clon del repositorio
+  
+![](https://github.com/hsilv/TechnicalTest/blob/main/images/pipeline-clone.png)
+
 * Instalación de librerías
+
+![](https://github.com/hsilv/TechnicalTest/blob/main/images/pipeline-install-1.png)
+![](https://github.com/hsilv/TechnicalTest/blob/main/images/pipeline-install-2.png)
+
 * Corrida de pruebas
+
+![](https://github.com/hsilv/TechnicalTest/blob/main/images/pipeline-test-1.png)
+![](https://github.com/hsilv/TechnicalTest/blob/main/images/pipeline-test-2.png)
+
 * En dashboard
+
+![](https://github.com/hsilv/TechnicalTest/blob/main/images/pipeline-dashboard.png)
