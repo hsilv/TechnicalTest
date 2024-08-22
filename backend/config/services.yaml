@@ -22,5 +22,10 @@ services:
     App\Serializer\TaskNormalizer:
         tags: ['serializer.normalizer']
 
+    App\Controller\SecurityController:
+        arguments:
+            $jwtManager: '@lexik_jwt_authentication.jwt_manager'
+            $logger: '@logger'
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

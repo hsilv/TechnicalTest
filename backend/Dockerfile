@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y \
     unzip \
     git \
     wget \
+    openssl \
     && docker-php-ext-install \
     intl \
     pdo \
@@ -19,8 +20,17 @@ WORKDIR /var/www/html
 COPY . .
 ENV COMPOSER_ALLOW_SUPERUSER=1
 RUN composer install --no-scripts --no-autoloader
-RUN composer require symfony/maker-bundle --dev
 RUN composer dump-autoload --optimize
+RUN mkdir -p config/jwt && \
+    chown -R www-data:www-data config/jwt
 RUN chown -R www-data:www-data /var/www/html
 EXPOSE 8000
-CMD symfony server:start --port=8000 --allow-http
+CMD composer install && \
+    php bin/console lexik:jwt:generate-keypair --overwrite && \
+    if [ -z "$(ls -A src/Migrations)" ]; then \
+    php bin/console make:migration; \
+    fi && \
+    if [ -z "$(ls -A src/Migrations)" ]; then \
+    php bin/console doctrine:migrations:migrate --no-interaction --allow-no-migration; \
+    fi && \
+    symfony server:start --port=8000 --allow-http
