@@ -21,6 +21,23 @@ Una vez el contenedor se esté ejecutando. Si se desea ver la página web fronte
 
 [http://localhost:5173](http://localhost:5173)
 
+La página se ve de esta forma:
+
+## Testeo de Frontend
+Para testear el frontend tienen que estar instaladas las librerías en la carpeta `frontend`, eso se hace con:
+```
+pnpm install
+```
+Si no tienes pnpm y tienes `node18` o mayor, puedes instalarlo con
+```
+corepack enable
+```
+una vez instalado se usa el siguiente comando:
+```
+pnpm test
+```
+Los test se ven de esta forma:
+
 ## Acceso a Backend
 Como primer punto, debe colocarse un `.env` en la raíz de backend, aquí la plantilla:
 ```
@@ -70,6 +87,21 @@ Para facilitar el acceso y la interacción con los endpoints servidos por el bac
 
 [http://localhost:8000/api](http://localhost:8000/api)
 
+El Swagger UI se ve de esta forma, cabe destacar que el botón *Authorize* es para que se coloque el token dado por el login:
+
+
+## Testeo de Backend
+Para esto es necesario utilizar el contenedor, como antes:
+```
+docker-compose exec -it backend /bin/bash
+```
+Luego en la misma carpeta hacer el testing con:
+```
+./vendor/bin/phpunit
+```
+Debería verse de esta forma:
+
+
 ## Instrucciones de uso de Jenkins
 Para acceder al Jenkins y poder ejecutar el pipeline servido en este proyecto por medio de la dirección:
 
@@ -97,3 +129,9 @@ Esto da la contraseña inicial, la cual debe pegarse para iniciar Jenkins, luego
 * En la directiva de las branches a utilizar cambiar `*/master` por `*/main`
 * En _"Script Path"_ dejarlo como _Jenkinsfile_
 * Por último guardar.
+
+El pipeline corrido se ve de esta forma:
+* Clon del repositorio
+* Instalación de librerías
+* Corrida de pruebas
+* En dashboard
