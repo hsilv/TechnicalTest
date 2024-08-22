@@ -23,6 +23,7 @@ pipeline {
             steps {
                 dir('backend') {
                     sh '''
+                    apt-get update && apt-get install -y php-pgsql
                     cp .env.example .env || echo "APP_ENV=dev
                     DATABASE_URL=postgresql://postgres:postgres@db:5432/todo
                     JWT_SECRET_KEY=%kernel.project_dir%/config/jwt/private.pem
