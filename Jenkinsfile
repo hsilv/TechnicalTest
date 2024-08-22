@@ -58,12 +58,5 @@ pipeline {
                 }
             }
         }
-
-        stage('Generar reportes') {
-            steps {
-                junit 'backend/tests/reports/*.xml'
-                junit 'frontend/tests/reports/*.xml'
-            }
-        }
     }
 }
