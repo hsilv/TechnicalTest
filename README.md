@@ -8,6 +8,8 @@ Antes debe colocarse un `.env` en la raíz del proyecto, acá la plantilla:
 DATABASE_URL=postgresql://postgres:postgres@db:5432/todo
 JWT_PASSPHRASE=CUSTOM_PASSPHRASE
 ```
+Además del `.env` de la carpeta de backend, la plantilla está más abajo.
+
 Debido a que está configurado para ello, solo hace falta colocar:
 
 ```
