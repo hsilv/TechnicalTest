@@ -94,10 +94,4 @@ pipeline {
             }
         }
     }
-
-    post {
-        always {
-            slackSend(channel: '#tu-canal', message: "Pipeline finalizado: ${currentBuild.fullDisplayName} - ${currentBuild.result}")
-        }
-    }
 }
