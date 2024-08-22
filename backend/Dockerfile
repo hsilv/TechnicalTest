@@ -27,10 +27,10 @@ RUN chown -R www-data:www-data /var/www/html
 EXPOSE 8000
 CMD composer install && \
     php bin/console lexik:jwt:generate-keypair --overwrite && \
-    if [ -z "$(ls -A src/Migrations)" ]; then \
+    if [ -z "$(ls -A migrations)" ]; then \
     php bin/console make:migration; \
     fi && \
-    if [ -z "$(ls -A src/Migrations)" ]; then \
+    if [ -z "$(ls -A migrations)" ]; then \
     php bin/console doctrine:migrations:migrate --no-interaction --allow-no-migration; \
     fi && \
     symfony server:start --port=8000 --allow-http
